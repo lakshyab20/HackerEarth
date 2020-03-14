@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+int t,g,p,n,largest,smallest,suma,sumb;
+int a[1005][2];
+cin >> t;
+for(int i=0;i<t;i++)
+{
+cin>>g>>p;
+largest=p;
+smallest=g;
+if(g>p)
+{
+largest=g;
+smallest=p;
+}
+cin>>n;
+for(int j=0;j<n;j++)
+{
+for(int k=0;k<2;k++)
+cin>>a[j][k];
+}
+suma=0,sumb=0;
+for(int l=0;l<n;l++)
+{
+suma=suma+a[l][0];
+sumb=sumb+a[l][1];
+}
+if(suma>sumb)
+{
+int disp=suma*smallest+sumb*largest;
+cout<<disp<<endl;
+}
+else
+{
+int disp=sumb*smallest+suma*largest;
+cout<<disp<<endl;
+}
+}
+}

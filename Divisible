@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+long int i,n,k,m,count=0,s,l,sum=0,sum1=0;
+long int a[100000],b[100000];
+scanf("%ld",&n);
+k=n/2;
+for(i=0;i<n;i++)
+scanf("%ld",&a[i]);
+for(i=0;i<k;i++)
+{
+m=a[i];
+count=0;
+while(m>=10)
+{
+m=m/10;
+}
+b[i]=m;
+}
+for(i=k;i<n;i++)
+{
+m=a[i];
+s=m%10;
+b[i]=s;
+}
+for(i=0;i<n;i++)
+{
+if(i%2 != 0)
+sum=sum+b[i];
+if(i%2 == 0)
+sum1=sum1+b[i];
+}
+if((sum-sum1)==0 || (sum-sum1)==11)
+printf("OUI");
+else
+printf("NON");
+}
